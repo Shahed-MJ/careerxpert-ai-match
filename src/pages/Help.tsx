@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Search, ChevronDown, ChevronUp, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Search, MessageCircle, Mail, Phone } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -35,30 +35,6 @@ const Help = () => {
     {
       question: 'What universities are partnered with CareerXpert?',
       answer: 'We partner with major universities across Jordan including University of Jordan, JUST, German Jordanian University, and many others. Check our partners page for the full list.'
-    }
-  ];
-
-  const contactOptions = [
-    {
-      icon: MessageCircle,
-      title: 'Live Chat',
-      description: 'Get instant help from our support team',
-      action: 'Start Chat',
-      color: 'bg-green-100 text-green-600'
-    },
-    {
-      icon: Mail,
-      title: 'Email Support',
-      description: 'Send us a detailed message',
-      action: 'Send Email',
-      color: 'bg-blue-100 text-blue-600'
-    },
-    {
-      icon: Phone,
-      title: 'Phone Support',
-      description: 'Call us during business hours',
-      action: 'Call Now',
-      color: 'bg-purple-100 text-purple-600'
     }
   ];
 
@@ -171,17 +147,33 @@ const Help = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                {contactOptions.map((option, index) => (
-                  <div key={index} className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-gray-50 cursor-pointer">
-                    <div className={`w-10 h-10 rounded-lg ${option.color} flex items-center justify-center`}>
-                      <option.icon className="w-5 h-5" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-medium text-gray-900">{option.title}</div>
-                      <div className="text-sm text-gray-600">{option.description}</div>
-                    </div>
+                <div className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-gray-50 cursor-pointer">
+                  <div className="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5" />
                   </div>
-                ))}
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-900">Live Chat</div>
+                    <div className="text-sm text-gray-600">Get instant help from our support team</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-gray-50 cursor-pointer">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-900">Email Support</div>
+                    <div className="text-sm text-gray-600">Send us a detailed message</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-gray-50 cursor-pointer">
+                  <div className="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-900">Phone Support</div>
+                    <div className="text-sm text-gray-600">Call us during business hours</div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -193,7 +185,7 @@ const Help = () => {
               <CardContent className="space-y-4">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Average Response Time</span>
-                  <span className="font-semibold">< 2 hours</span>
+                  <span className="font-semibold">&lt; 2 hours</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Customer Satisfaction</span>
